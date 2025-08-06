@@ -5,30 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aprita Choudhary | WordPress Backend Developer</title>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1c1c2e;
-      --accent: #00c7b7;
-      --light-bg: #f7f9fc;
+      --orange: #ff6b00;
       --dark-bg: #121212;
+      --light-bg: #f9f9f9;
       --text-light: #ffffff;
       --text-dark: #1a1a1a;
     }
 
     * {
+      margin: 0; padding: 0;
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html, body {
+      font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
       background: var(--light-bg);
       color: var(--text-dark);
-      transition: 0.3s;
     }
 
     body.dark {
@@ -38,121 +39,120 @@
 
     header {
       position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 15px 30px;
-      background: white;
+      top: 0; left: 0; right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      z-index: 999;
-      transition: 0.3s;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
-    header.dark {
-      background: #1c1c2e;
+    body.dark header {
+      background: rgba(18, 18, 18, 0.95);
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 1rem;
+      color: inherit;
       text-decoration: none;
-      font-weight: bold;
-      color: var(--primary);
-    }
-
-    body.dark nav a {
-      color: var(--text-light);
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
     nav a:hover, nav a.active {
-      color: var(--accent);
+      color: var(--orange);
+    }
+
+    .toggle-theme {
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: var(--orange);
     }
 
     .resume-btn {
       position: fixed;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: var(--accent);
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--orange);
       color: white;
-      padding: 10px 16px;
+      padding: 10px 15px;
+      text-decoration: none;
       border-radius: 5px;
       font-weight: 600;
-      text-decoration: none;
-      z-index: 1000;
-    }
-
-    .dark-toggle {
-      cursor: pointer;
-      font-size: 20px;
-      color: var(--primary);
-    }
-
-    .dark header .dark-toggle {
-      color: var(--accent);
+      z-index: 999;
     }
 
     section {
-      padding: 100px 20px 60px;
-      max-width: 960px;
+      padding: 120px 20px 80px;
+      max-width: 1000px;
       margin: auto;
     }
 
-    h1, h2 {
-      color: var(--primary);
-    }
-
-    body.dark h1, body.dark h2 {
-      color: var(--accent);
+    h1, h2, h3 {
+      color: var(--orange);
+      margin-bottom: 0.6em;
     }
 
     .hero {
       text-align: center;
-      padding-top: 150px;
+      padding-top: 180px;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+      font-size: 3rem;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     .btn {
-      margin-top: 20px;
       display: inline-block;
-      padding: 10px 20px;
-      background: var(--accent);
+      background: var(--orange);
       color: white;
+      padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
+      margin-top: 1.5rem;
     }
 
-    @media (max-width: 768px) {
-      nav a {
-        margin: 0 10px;
+    .background-anim {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      z-index: -1;
+      background: radial-gradient(circle at 30% 30%, rgba(255,107,0,0.1), transparent 40%),
+                  radial-gradient(circle at 70% 70%, rgba(255,107,0,0.1), transparent 40%);
+      animation: moveBg 10s infinite alternate;
+    }
+
+    @keyframes moveBg {
+      from {
+        background-position: 30% 30%, 70% 70%;
       }
-      .hero h1 {
-        font-size: 2rem;
+      to {
+        background-position: 40% 40%, 60% 60%;
       }
     }
   </style>
 </head>
 <body>
+  <div class="background-anim"></div>
+
   <a class="resume-btn" href="Apritaa (2).pdf" download>Download Resume</a>
 
-  <header id="header">
+  <header>
     <div><strong>Aprita</strong></div>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="dark-toggle" onclick="toggleDarkMode()">
+    <div class="toggle-theme" onclick="toggleTheme()">
       <i class="fas fa-moon"></i>
     </div>
   </header>
@@ -160,95 +160,73 @@
   <section id="about" class="hero" data-aos="fade-up">
     <h1>Aprita Choudhary</h1>
     <p>WordPress Backend Developer</p>
-    <p>I build secure, fast, and scalable WordPress solutions — plugins, APIs, custom themes, and WooCommerce.</p>
+    <p>I build scalable, secure, and fast WordPress solutions using custom themes, plugins, hooks, and APIs.</p>
     <a href="#projects" class="btn">View Projects</a>
   </section>
     <section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
-    <ul style="margin-top: 1rem; line-height: 2;">
-      <li>✅ WordPress Plugin & Theme Development</li>
-      <li>✅ WooCommerce Customization & Hooks</li>
-      <li>✅ REST API Integration & CPT</li>
-      <li>✅ PHP, MySQL, JavaScript (Basic)</li>
-      <li>✅ WP-CLI, Git, Docker (Basic), cPanel</li>
+    <ul style="line-height: 2;">
+      <li>✔️ WordPress Plugin & Theme Development</li>
+      <li>✔️ WooCommerce Hooks & Filters</li>
+      <li>✔️ Custom Post Types (CPT) & Advanced Custom Fields (ACF)</li>
+      <li>✔️ REST API Integration & AJAX</li>
+      <li>✔️ PHP, MySQL, JavaScript</li>
     </ul>
   </section>
 
   <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
-
-    <div style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 2rem;">
-      <div style="background: white; border-left: 4px solid var(--accent); padding: 1rem; border-radius: 8px; transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+    <div class="projects">
+      <div class="project-card">
         <h3>Melontaxi</h3>
-        <p>Custom WordPress booking & rental system with REST API + admin panel.</p>
-        <a href="https://melontaxi.com" target="_blank">🔗 Visit Site</a>
+        <p>Rental system with WordPress backend and booking integration.</p>
+        <a href="#" target="_blank">🔗 Visit</a>
       </div>
 
-      <div style="background: white; border-left: 4px solid var(--accent); padding: 1rem; border-radius: 8px; transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      <div class="project-card">
         <h3>Voyager Engineering</h3>
-        <p>Built a corporate theme with REST endpoints, ACF, and optimized load time.</p>
-        <a href="https://voyagereng.com" target="_blank">🔗 Visit Site</a>
+        <p>Custom theme with ACF and REST API for engineering firm.</p>
+        <a href="#" target="_blank">🔗 Visit</a>
       </div>
 
-      <div style="background: white; border-left: 4px solid var(--accent); padding: 1rem; border-radius: 8px; transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      <div class="project-card">
         <h3>Norbulingka</h3>
-        <p>Multilingual WooCommerce site with third-party API and multilingual content.</p>
-        <a href="https://norbulingka.org" target="_blank">🔗 Visit Site</a>
+        <p>Multilingual WooCommerce site with 3rd-party API integration.</p>
+        <a href="#" target="_blank">🔗 Visit</a>
       </div>
     </div>
   </section>
-    <section id="experience" data-aos="fade-up">
-    <h2>Experience</h2>
-    <div style="margin-top: 1rem; line-height: 2;">
-      <p><strong>Gai Technology</strong> – Sept 2021 – July 2023</p>
-      <p><strong>Tech Arch Softwares</strong> – Oct 2023 – Aug 2024</p>
-      <p><strong>Blacklisted</strong> – Sept 2024 – Mar 2025</p>
-      <p><strong>Leading Edge Info Solutions</strong> – Apr 2025 – Jul 2025</p>
-    </div>
-  </section>
-
-  <section id="contact" data-aos="fade-up">
+    <section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
-    <form action="mailto:apritachoudhary@gmail.com" method="POST" enctype="text/plain" style="margin-top: 1.5rem;">
-      <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
-      <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
-      <textarea name="message" placeholder="Your Message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
-      <button type="submit" class="btn">Send</button>
-    </form>
-
-    <div class="social-icons" style="margin-top: 2rem;">
-      <a href="https://github.com/Apritachoudhary" target="_blank" style="margin-right: 10px; color: var(--primary); font-size: 1.4rem;"><i class="fab fa-github"></i></a>
-      <a href="mailto:apritachoudhary@gmail.com" style="margin-right: 10px; color: var(--primary); font-size: 1.4rem;"><i class="fas fa-envelope"></i></a>
-    </div>
+    <p>Email: <a href="mailto:apritachoudhary@gmail.com">apritachoudhary@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/Apritachoudhary" target="_blank">Apritachoudhary</a></p>
   </section>
 
-  <footer style="text-align: center; padding: 30px 20px; background: var(--primary); color: white; margin-top: 40px;">
-    <p>© 2025 Aprita Choudhary. All Rights Reserved.</p>
+  <footer>
+    &copy; 2025 Aprita Choudhary. All Rights Reserved.
   </footer>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    // Initialize AOS scroll animations
+    AOS.init({ duration: 1000 });
 
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-      document.getElementById("header").classList.toggle("dark");
+    // Toggle dark mode
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
     }
 
-    // Scrollspy - highlights active nav item on scroll
-    const navLinks = document.querySelectorAll("nav a");
-    window.addEventListener("scroll", () => {
+    // Scrollspy effect (optional)
+    const navLinks = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       navLinks.forEach(link => {
-        const section = document.querySelector(link.getAttribute("href"));
+        const section = document.querySelector(link.getAttribute('href'));
         if (
-          section.offsetTop <= scrollY + 80 &&
-          section.offsetTop + section.offsetHeight > scrollY + 80
+          section.offsetTop <= scrollY + 100 &&
+          section.offsetTop + section.offsetHeight > scrollY + 100
         ) {
-          navLinks.forEach(l => l.classList.remove("active"));
-          link.classList.add("active");
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
         }
       });
     });
