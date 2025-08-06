@@ -4,97 +4,146 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aprita Choudhary | WordPress Backend Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #243949;
-      --accent: #00bfa6;
-      --light-bg: #f9fafc;
+      --primary: #1c1c2e;
+      --accent: #00c7b7;
+      --light-bg: #f7f9fc;
       --dark-bg: #121212;
-      --light-text: #333;
-      --dark-text: #eee;
+      --text-light: #ffffff;
+      --text-dark: #1a1a1a;
     }
-    body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
       background: var(--light-bg);
-      color: var(--light-text);
-      scroll-behavior: smooth;
+      color: var(--text-dark);
       transition: 0.3s;
     }
-    body.dark-mode {
+
+    body.dark {
       background: var(--dark-bg);
-      color: var(--dark-text);
+      color: var(--text-light);
     }
+
     header {
       position: fixed;
       top: 0;
       width: 100%;
+      padding: 15px 30px;
       background: white;
-      z-index: 1000;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      z-index: 999;
+      transition: 0.3s;
     }
-    header.dark-mode {
-      background: #1e1e1e;
+
+    header.dark {
+      background: #1c1c2e;
     }
+
     nav a {
-      margin: 0 1rem;
-      color: var(--primary);
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-    }
-    nav a:hover {
-      color: var(--accent);
-    }
-    .dark-mode nav a {
-      color: var(--dark-text);
-    }
-    .toggle-theme {
-      cursor: pointer;
-      font-size: 1.2rem;
       color: var(--primary);
     }
-    .dark-mode .toggle-theme {
+
+    body.dark nav a {
+      color: var(--text-light);
+    }
+
+    nav a:hover, nav a.active {
       color: var(--accent);
     }
+
     .resume-btn {
       position: fixed;
-      top: 1.2rem;
-      right: 1.2rem;
+      top: 1.5rem;
+      right: 1.5rem;
       background: var(--accent);
       color: white;
-      padding: 8px 14px;
+      padding: 10px 16px;
       border-radius: 5px;
+      font-weight: 600;
       text-decoration: none;
-      z-index: 999;
+      z-index: 1000;
     }
+
+    .dark-toggle {
+      cursor: pointer;
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .dark header .dark-toggle {
+      color: var(--accent);
+    }
+
     section {
       padding: 100px 20px 60px;
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
     }
+
+    h1, h2 {
+      color: var(--primary);
+    }
+
+    body.dark h1, body.dark h2 {
+      color: var(--accent);
+    }
+
     .hero {
       text-align: center;
+      padding-top: 150px;
     }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
     .btn {
+      margin-top: 20px;
+      display: inline-block;
       padding: 10px 20px;
       background: var(--accent);
       color: white;
-      border: none;
       border-radius: 5px;
       text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        margin: 0 10px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <a class="resume-btn" href="Apritaa (2).pdf" download>Download Resume</a>
-  <header>
+
+  <header id="header">
     <div><strong>Aprita</strong></div>
     <nav>
       <a href="#about">About</a>
@@ -103,7 +152,7 @@
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="toggle-theme" onclick="toggleTheme()">
+    <div class="dark-toggle" onclick="toggleDarkMode()">
       <i class="fas fa-moon"></i>
     </div>
   </header>
@@ -111,5 +160,6 @@
   <section id="about" class="hero" data-aos="fade-up">
     <h1>Aprita Choudhary</h1>
     <p>WordPress Backend Developer</p>
-    <p>I build scalable, secure, and high-performance WordPress solutions.</p>
+    <p>I build secure, fast, and scalable WordPress solutions — plugins, APIs, custom themes, and WooCommerce.</p>
+    <a href="#projects" class="btn">View Projects</a>
   </section>
