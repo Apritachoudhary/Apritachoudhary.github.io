@@ -4,224 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aprita Choudhary | WordPress Backend Developer</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <style>
+    :root {
+      --primary: #243949;
+      --accent: #00bfa6;
+      --light-bg: #f9fafc;
+      --dark-bg: #121212;
+      --light-text: #333;
+      --dark-text: #eee;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--light-bg);
+      color: var(--light-text);
+      scroll-behavior: smooth;
+      transition: 0.3s;
+    }
+    body.dark-mode {
+      background: var(--dark-bg);
+      color: var(--dark-text);
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    header.dark-mode {
+      background: #1e1e1e;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .dark-mode nav a {
+      color: var(--dark-text);
+    }
+    .toggle-theme {
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+    .dark-mode .toggle-theme {
+      color: var(--accent);
+    }
+    .resume-btn {
+      position: fixed;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--accent);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      z-index: 999;
+    }
+    section {
+      padding: 100px 20px 60px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="container">
-      <h1>Aprita Choudhary</h1>
-      <p>WordPress Backend Developer</p>
-      <p class="tagline">I build scalable, secure, and high-performance WordPress solutions.</p>
-      <a href="#projects" class="btn">View My Work</a>
+  <a class="resume-btn" href="Apritaa (2).pdf" download>Download Resume</a>
+  <header>
+    <div><strong>Aprita</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="toggle-theme" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i>
     </div>
+  </header>
+
+  <section id="about" class="hero" data-aos="fade-up">
+    <h1>Aprita Choudhary</h1>
+    <p>WordPress Backend Developer</p>
+    <p>I build scalable, secure, and high-performance WordPress solutions.</p>
   </section>
-
-  <section class="section" id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I’m a WordPress backend developer with 3+ years of experience in plugin & theme development, WooCommerce customizations, and REST API integrations. I focus on performance, clean code, and delivering seamless backend solutions.</p>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div><strong>Backend</strong><br>Plugins, WooCommerce, CPT, REST API</div>
-        <div><strong>Performance</strong><br>Caching, Query Optimization, Security</div>
-        <div><strong>Tech</strong><br>PHP, MySQL, Git, WP-CLI, Docker (basic)</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-
-      <div class="project">
-        <h3>Melontaxi</h3>
-        <p>Custom WordPress booking and rental platform with REST API, fast performance, and admin tools.</p>
-        <a href="https://melontaxi.com" target="_blank">🔗 Visit Site</a>
-      </div>
-
-      <div class="project">
-        <h3>Voyager Engineering</h3>
-        <p>Created a scalable corporate site with custom theme, REST endpoints, and security optimizations.</p>
-        <a href="https://voyagereng.com" target="_blank">🔗 Visit Site</a>
-      </div>
-
-      <div class="project">
-        <h3>Norbulingka</h3>
-        <p>Integrated third-party API, optimized WooCommerce and handled multilingual content setup.</p>
-        <a href="https://norbulingka.org" target="_blank">🔗 Visit Site</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <h2>Experience</h2>
-      <ul class="timeline">
-        <li><strong>Gai Technology</strong> – WordPress Dev (Sept 2021 – July 2023)</li>
-        <li><strong>Tech Arch Softwares</strong> – WordPress Dev (Oct 2023 – Aug 2024)</li>
-        <li><strong>Blacklisted</strong> – PHP Dev (Sept 2024 – Mar 2025)</li>
-        <li><strong>Leading Edge Info Solutions</strong> – Web Dev (Apr 2025 – Jul 2025)</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <form action="mailto:apritachoudhary@gmail.com" method="POST" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Aprita Choudhary | WordPress Backend Developer</p>
-  </footer>
-</body>
-  <style>
-    body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f9fafc;
-  color: #333;
-  scroll-behavior: smooth;
-}
-
-.hero {
-  background: linear-gradient(to right, #243949, #517fa4);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-.btn {
-  background: #fff;
-  color: #243949;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 5px;
-  margin-top: 20px;
-  display: inline-block;
-  transition: 0.3s ease;
-}
-
-.btn:hover {
-  background: #e0e0e0;
-  transform: scale(1.05);
-}
-
-.section {
-  padding: 60px 20px;
-  animation: fadeInUp 1s ease-in;
-}
-
-.section.alt {
-  background: #eef3f7;
-}
-
-h2 {
-  color: #243949;
-}
-
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.skills-grid > div {
-  flex: 1;
-  min-width: 200px;
-  background: #fff;
-  padding: 20px;
-  border-left: 4px solid #517fa4;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-.project {
-  margin-bottom: 20px;
-  background: #fff;
-  padding: 20px;
-  border-left: 4px solid #243949;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-.project a {
-  color: #517fa4;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.timeline {
-  list-style-type: none;
-  padding: 0;
-}
-
-.timeline li {
-  margin: 10px 0;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-form input, form textarea {
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-footer {
-  background: #243949;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0 }
-  to { opacity: 1 }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .skills-grid {
-    flex-direction: column;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-}
-
-  </style>
-</html>
