@@ -76,4 +76,126 @@
     <p>© 2025 Aprita Choudhary</p>
   </footer>
 </body>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.hero {
+  background: linear-gradient(to right, #0066cc, #0099ff);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.btn {
+  background: white;
+  color: #0066cc;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: #eef2f7;
+  transform: translateY(-2px);
+}
+
+.section {
+  padding: 60px 20px;
+  background: white;
+  animation: fadeInUp 1s ease-in;
+}
+
+.section.alt {
+  background: #eef2f7;
+}
+
+h2 {
+  color: #0066cc;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin: 10px 0;
+}
+
+.project {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid #0066cc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  animation: fadeInUp 0.8s ease;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+  </style>
 </html>
