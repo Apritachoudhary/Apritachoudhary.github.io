@@ -159,7 +159,13 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
+img.about-photo {
+  height: 300px;
+    width: 300px;
+    border: 1px;
+    border-radius: 20px;
+}
+    
 #career, #about {
   padding: 60px 20px;
   max-width: 1260px;
@@ -334,11 +340,18 @@
 <section id="about" data-aos="fade-up">
   <h2>About Me</h2>
   <div class="about-content">
+    <div class="ab">
+    <div class = "img-section">
 <img src="9700_4_04.jpg" alt="Profile Photo" class="about-photo" />
-    <div class="about-text">
+    </div>
+    <div class ="ab-text">
       <p>
         I am a passionate WordPress Backend Developer with over 3 years of experience building custom plugins, integrating APIs, and optimizing performance for e-commerce websites. I love transforming ideas into reality through clean, scalable code.
       </p>
+    </div>
+    </div>
+    <div class="about-text">
+      
       <div class="about-highlights">
         <span>PHP</span>
         <span>WooCommerce</span>
