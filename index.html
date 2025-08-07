@@ -160,17 +160,29 @@
   100% { background-position: 0% 50%; }
 }
 
-#career {
+#career, #about {
   padding: 60px 20px;
   max-width: 1260px;
   margin: auto;
 }
 
-#career h2 {
+#career h2, #about h2{
   text-align: center;
   color: #ff6b00;
   font-size: 4rem;
   margin-bottom: 3rem;
+}
+
+.about-content .about-text p {
+    font-size: 2 rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.about-content .about-highlights span {
+  font-size: 2 rem;
+    color: #ccc;
+    margin-bottom: 2rem;
 }
 
 /* Timeline Container */
@@ -235,22 +247,25 @@
 .education h3 {
   color: #ff6b00;
   margin-bottom: 1rem;
+  font-size : 3rem;
 }
 
 .education-item {
   background: #1c1c1c;
-  padding: 1rem;
+  padding: 2rem;
   border-left: 3px solid #ff6b00;
   border-radius: 5px;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;  
 }
 
 .education-item strong {
-  font-size: 1rem;
+  font-size: 1.8rem;
 }
 
 .edu-duration {
-  font-size: 0.85rem;
+  font-size: 16px;
   color: #aaa;
 }
 
@@ -319,7 +334,7 @@
 <section id="about" data-aos="fade-up">
   <h2>About Me</h2>
   <div class="about-content">
-    <img src=" ../IMG20241217141131.jpg/ " alt="Profile Photo" class="about-photo" />
+<img src="IMG20241217141131.jpg" alt="Profile Photo" class="about-photo" />
     <div class="about-text">
       <p>
         I am a passionate WordPress Backend Developer with over 3 years of experience building custom plugins, integrating APIs, and optimizing performance for e-commerce websites. I love transforming ideas into reality through clean, scalable code.
