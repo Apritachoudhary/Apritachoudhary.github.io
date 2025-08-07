@@ -156,6 +156,50 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+    #career h2 {
+  text-align: center;
+  color: var(--orange);
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-item {
+  background: white;
+  padding: 1.5rem;
+  border-left: 4px solid var(--orange);
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.dark .timeline-item {
+  background: #1e1e1e;
+}
+
+.timeline-item[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.timeline-item .duration {
+  display: block;
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
+
 
   </style>
 </head>
@@ -188,6 +232,32 @@
     <a href="Apritaa (2).pdf" class="btn secondary" download>Download Resume</a>
   </div>
 </section>
+  <section id="career" data-aos="fade-up">
+  <h2>Career History</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>WordPress Backend Developer</h3>
+      <span class="duration">September 2021 – July 2023</span>
+      <p>Gai Technology – Developed custom plugins, improved WooCommerce, integrated third-party APIs, and optimized database and caching systems.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>WordPress Backend Developer</h3>
+      <span class="duration">October 2023 – August 2024</span>
+      <p>Tech Arch Softwares – Built loyalty programs, enhanced performance by 40%, and developed a custom booking system using REST API and CPTs.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>PHP Developer</h3>
+      <span class="duration">September 2024 – March 2025</span>
+      <p>Blacklisted – Built custom WordPress sites, handled WooCommerce customizations, and performance optimizations.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Web Developer</h3>
+      <span class="duration">April 2025 – July 2025</span>
+      <p>Leading Edge Info Solutions – Worked on WordPress and WooCommerce sites, Webflow design, and custom loyalty functionality.</p>
+    </div>
+  </div>
+</section>
+
 
 <script>
   function toggleCircleMenu() {
