@@ -395,7 +395,82 @@ img.about-photo {
     .project-link:hover {
         background: #e66e00;
     }
+.contact-section {
+  padding: 50px 10%;
+}
 
+.contact-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+}
+
+.contact-info .tagline {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact-info .tagline span {
+  color: #ff6600;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  margin-right: 10px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff6600;
+}
+
+.contact-form {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-form h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.contact-form button {
+  background: #ff6600;
+  padding: 12px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.contact-form button:hover {
+  background: #e65c00;
+}
 
   </style>
 </head>
@@ -547,6 +622,44 @@ img.about-photo {
 </div>
 
   </section>
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    
+    <!-- Left Side -->
+    <div class="contact-info">
+      <h2>Let's Have a Chat</h2>
+      <p class="tagline">BELIEVE IN <span>KARMA</span></p>
+      
+      <p><strong>Email:</strong> hello@example.com</p>
+      <p><strong>Address:</strong> Himachal Pradesh, India</p>
+      <p><strong>Working Hours:</strong> 9:00 AM - 1:00 AM</p>
+      
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    
+    <!-- Right Side -->
+    <div class="contact-form">
+      <h3>Leave your email and I will get back to you within 24 hours</h3>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Submit ➤</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
 
 
 <script>
@@ -562,6 +675,21 @@ img.about-photo {
         duration: 1000,
         once: true
     });
+  (function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+        .then(function() {
+            alert("Message sent successfully!");
+        }, function(error) {
+            alert("Failed to send message: " + JSON.stringify(error));
+        });
+});
+
 </script>
 
 </body>
