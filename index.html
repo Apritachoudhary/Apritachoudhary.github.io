@@ -309,7 +309,73 @@ img.about-photo {
         border-color: #ff7b00;
         cursor: default;
     }
-
+ .projects-section {
+        font-family: Arial, sans-serif;
+        padding: 50px 0;
+        text-align: center;
+        background: #f9f9f9;
+    }
+    .projects-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        border-left: 5px solid #ff7b00;
+        display: inline-block;
+        padding-left: 10px;
+    }
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 0 20px;
+    }
+    .project-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+        transform: rotateY(10deg) rotateX(5deg) scale(1.03);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .project-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-img {
+        transform: scale(1.1);
+    }
+    .project-content {
+        padding: 15px;
+        text-align: left;
+    }
+    .project-content h3 {
+        color: #ff7b00;
+        margin-bottom: 8px;
+    }
+    .project-content p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.5;
+    }
+    .project-link {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #ff7b00;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .project-link:hover {
+        text-decoration: underline;
+    }
  
 
 
@@ -428,6 +494,42 @@ img.about-photo {
     </div>
   </div>
 </section>
+   <section id="career" data-aos="fade-up">
+  <h2> Projects </h2>
+    <div class="projects-section">
+    <h2 class="projects-title">My Projects</h2>
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <img src="project1.jpg" alt="Project 1" class="project-img">
+            <div class="project-content">
+                <h3>E-Commerce Website</h3>
+                <p>Custom WooCommerce store with advanced filters, payment gateways, and lightning-fast performance optimization.</p>
+                <a href="#" class="project-link" target="_blank">View Project →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="project2.jpg" alt="Project 2" class="project-img">
+            <div class="project-content">
+                <h3>Portfolio Website</h3>
+                <p>Personal portfolio with smooth animations, responsive design, and integrated contact forms.</p>
+                <a href="#" class="project-link" target="_blank">View Project →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="project3.jpg" alt="Project 3" class="project-img">
+            <div class="project-content">
+                <h3>Custom Plugin Development</h3>
+                <p>Developed a custom WordPress plugin for managing dynamic product features and API integrations.</p>
+                <a href="#" class="project-link" target="_blank">View Project →</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+  </section>
 
 
 <script>
