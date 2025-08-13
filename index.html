@@ -287,6 +287,18 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
+    @media only screen and (max-width: 600px) {
+ .about-wrap {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2rem);
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+      .ab-text {
+    width: 100%;
+
+}
+}
   </style>
 </head>
 <body>
